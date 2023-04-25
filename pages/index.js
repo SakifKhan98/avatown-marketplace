@@ -1,3 +1,5 @@
+import Layout from '@/components/Layout/Layout'
+
 export default function Home() {
-  return <p className="text-4xl text-blue-700 font-bold">AVATOWN MARKETPLACE</p>
+  return <Layout>Home Page</Layout>
 }
