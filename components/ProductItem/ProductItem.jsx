@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   AiOutlineHeart,
   AiFillHeart,
@@ -21,7 +21,7 @@ const ProductItem = ({ product }) => {
   }
   const handleContextMenu = (e) => {
     e.stopPropagation()
-    setContextMenuActive(!isContextMenuActive)
+    setContextMenuActive(true)
   }
 
   const handleCopyToClipboard = (textToCopy) => {
@@ -32,6 +32,40 @@ const ProductItem = ({ product }) => {
     }, 4000)
     // setContextMenuActive(false)
   }
+
+  // Component for tooltip - Closes if clicked outside
+  // https://blog.logrocket.com/detect-click-outside-react-component-how-to/
+  const ToolTipBox = (props) => {
+    const ref = useRef(null)
+    const { onClickOutside } = props
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          onClickOutside && onClickOutside()
+          setIsCopied(false)
+        }
+      }
+      document.addEventListener('click', handleClickOutside, true)
+      return () => {
+        document.removeEventListener('click', handleClickOutside, true)
+      }
+    }, [onClickOutside])
+
+    if (!props.show) return null
+
+    return (
+      <div
+        className='absolute flex px-1.5 py-0.5 -top-4 right-4 bg-white rounded-md border border-gray-700 text-gray-700 hover:cursor-pointer gap-1'
+        ref={ref}
+        onClick={() => handleCopyToClipboard(`/product/${product.id}`)}
+      >
+        <AiOutlineLink className='w-5 h-5' />
+        <span className='text-sm'>Copy Link</span>
+      </div>
+    )
+  }
+
   return (
     <div className='my-5'>
       <div className='h-100 max-w-sm rounded overflow-hidden shadow-lg'>
@@ -99,7 +133,13 @@ const ProductItem = ({ product }) => {
                 className='w-8 h-8 hover:cursor-pointer'
                 onClick={handleContextMenu}
               />
-              {isContextMenuActive && (
+              <ToolTipBox
+                show={isContextMenuActive}
+                onClickOutside={() => {
+                  setContextMenuActive(false)
+                }}
+              />
+              {/* {isContextMenuActive && (
                 <div
                   className='absolute flex px-1.5 py-0.5 -top-4 right-4 bg-white rounded-md border border-gray-700 text-gray-700 hover:cursor-pointer gap-1'
                   onClick={() =>
@@ -109,7 +149,7 @@ const ProductItem = ({ product }) => {
                   <AiOutlineLink className='w-5 h-5' />
                   <span className='text-sm'>Copy Link</span>
                 </div>
-              )}
+              )} */}
               {isCopied && (
                 <div className='absolute flex px-1.5 py-0.5 -top-10 right-4 bg-gray-700 rounded-md border border-gray-700 text-white hover:cursor-pointer gap-1'>
                   {/* <AiOutlineLink className='w-5 h-5' /> */}
