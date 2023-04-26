@@ -10,6 +10,7 @@ import {
 } from 'react-icons/ai'
 import { MdCircle } from 'react-icons/md'
 import { FiShare } from 'react-icons/fi'
+import { BsCartPlus } from 'react-icons/bs'
 
 const ProductItem = ({ product }) => {
   const [isLiked, setIsLiked] = useState(false)
@@ -31,6 +32,10 @@ const ProductItem = ({ product }) => {
       setIsCopied(false)
     }, 4000)
     // setContextMenuActive(false)
+  }
+
+  const handleAddToCart = () => {
+    alert('Added to cart')
   }
 
   // Component for tooltip - Closes if clicked outside
@@ -68,7 +73,15 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className='my-5'>
-      <div className='h-100 max-w-sm rounded overflow-hidden shadow-lg'>
+      <div className='h-100 max-w-sm rounded overflow-hidden shadow-lg relative'>
+        <div
+          className='absolute top-3 right-4 block text-white text-center bg-indigo-600 rounded-md w-auto px-2 py-1 cursor-pointer'
+          onClick={handleAddToCart}
+        >
+          <div className='flex items-center px-1 justify-between gap-2 font-medium'>
+            <BsCartPlus /> <span>Add</span>
+          </div>
+        </div>
         <Link href={`/product/${product.slug}`}>
           <Image
             className='w-full rounded'
