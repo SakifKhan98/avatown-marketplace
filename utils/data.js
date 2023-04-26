@@ -2,7 +2,7 @@ const data = {
   products: [
     {
       id: 1,
-      title: 'Fully-configurable multi-tasking pricing structure',
+      title: 'Demand-driven strategy multi-tasking pricing',
       image: 'https://i.ibb.co/HXw9zBn/VRC-image-M-F.png',
       price: 325,
       description:

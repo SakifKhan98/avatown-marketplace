@@ -104,15 +104,15 @@ const ProductItem = ({ product }) => {
             </div>
           </div>
           <Link href='/'>
-            <div className='flex gap-3 my-2'>
+            <div className='flex gap-2 my-2'>
               <Image
-                className='w-min rounded-full object-cover'
+                className='w-auto h-auto rounded-full object-cover'
                 src={product.seller_image}
                 alt='Seller Image'
                 width={16}
                 height={16}
               />
-              <p>{product.seller_name}</p>
+              <p className='text-sm'>{product.seller_name}</p>
             </div>
           </Link>
           <div className='flex flex-row'>
@@ -139,17 +139,6 @@ const ProductItem = ({ product }) => {
                   setContextMenuActive(false)
                 }}
               />
-              {/* {isContextMenuActive && (
-                <div
-                  className='absolute flex px-1.5 py-0.5 -top-4 right-4 bg-white rounded-md border border-gray-700 text-gray-700 hover:cursor-pointer gap-1'
-                  onClick={() =>
-                    handleCopyToClipboard(`/product/${product.id}`)
-                  }
-                >
-                  <AiOutlineLink className='w-5 h-5' />
-                  <span className='text-sm'>Copy Link</span>
-                </div>
-              )} */}
               {isCopied && (
                 <div className='absolute flex px-1.5 py-0.5 -top-10 right-4 bg-gray-700 rounded-md border border-gray-700 text-white hover:cursor-pointer gap-1'>
                   {/* <AiOutlineLink className='w-5 h-5' /> */}
