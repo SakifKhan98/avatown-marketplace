@@ -1,9 +1,19 @@
 import Layout from '@/components/Layout/Layout'
 import ProductItem from '@/components/ProductItem/ProductItem'
 import SelectMenu from '@/components/SelectMenu/SelectMenu'
+import Pagination from '@/components/pagination/pagination'
 import data from '@/utils/data'
+import { useMemo, useState } from 'react'
+
+let PageSize = 12
 
 export default function Home() {
+  const [currentPage, setCurrentPage] = useState(1)
+  const currentData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize
+    const lastPageIndex = firstPageIndex + PageSize
+    return data.products.slice(firstPageIndex, lastPageIndex)
+  }, [currentPage])
   return (
     <Layout title='Home Page'>
       <div className='flex flex-row justify-between gap-2'>
@@ -18,10 +28,17 @@ export default function Home() {
             </div>
           </div>
           <div className='flex flex-row flex-wrap justify-between'>
-            {data.products.map((product) => (
+            {currentData.map((product) => (
               <ProductItem key={product.id} product={product}></ProductItem>
             ))}
           </div>
+          <Pagination
+            // className='pagination-bar'
+            currentPage={currentPage}
+            totalCount={data.products.length}
+            pageSize={PageSize}
+            onPageChange={(page) => setCurrentPage(page)}
+          />
         </div>
       </div>
     </Layout>

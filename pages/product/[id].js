@@ -8,7 +8,7 @@ const ProductScreen = () => {
   const product = data.products.find(
     (singleProduct) => singleProduct.id === parseInt(id)
   )
-  console.log('SEARCHED PRODUCT', product)
+  // console.log('SEARCHED PRODUCT', product)
   return <div>SINGLE PRODUCT TITLE: {product.title}</div>
 }
 

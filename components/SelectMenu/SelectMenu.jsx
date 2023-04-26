@@ -61,7 +61,7 @@ const SelectMenu = () => {
   }
 
   return (
-    <div className='flex items-center p-5'>
+    <div className='flex items-center p-5 z-50'>
       <div className='w-auto text-sm'>
         <button
           type='button'
@@ -77,8 +77,8 @@ const SelectMenu = () => {
         <ul
           className={`${
             isOptionsOpen
-              ? 'block absolute border border-gray-500 bg-white'
-              : 'hidden absolute'
+              ? 'block absolute border border-gray-500 bg-white z-50'
+              : 'hidden absolute z-50'
           }`}
           role='listbox'
           aria-activedescendant={optionsList[selectedOption]}
