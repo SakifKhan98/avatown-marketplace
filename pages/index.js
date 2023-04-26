@@ -32,13 +32,14 @@ export default function Home() {
               <ProductItem key={product.id} product={product}></ProductItem>
             ))}
           </div>
-          <Pagination
-            // className='pagination-bar'
-            currentPage={currentPage}
-            totalCount={data.products.length}
-            pageSize={PageSize}
-            onPageChange={(page) => setCurrentPage(page)}
-          />
+          <div className='flex items-center justify-center my-10'>
+            <Pagination
+              currentPage={currentPage}
+              totalCount={data.products.length}
+              pageSize={PageSize}
+              onPageChange={(page) => setCurrentPage(page)}
+            />
+          </div>
         </div>
       </div>
     </Layout>

@@ -31,7 +31,6 @@ const ProductItem = ({ product }) => {
     setTimeout(() => {
       setIsCopied(false)
     }, 4000)
-    // setContextMenuActive(false)
   }
 
   const handleAddToCart = () => {
@@ -94,7 +93,10 @@ const ProductItem = ({ product }) => {
         <div className='px-6 py-4'>
           <Link href={`/product/${product.id}`}>
             <div className='text-base mb-2 font-medium'>
-              {product.title} {product.seller_name} {product.device}
+              {`${product.title} ${product.seller_name} ${product.device}`.slice(
+                0,
+                50
+              )}
             </div>
           </Link>
           <div className='flex flex-row justify-between items-end'>

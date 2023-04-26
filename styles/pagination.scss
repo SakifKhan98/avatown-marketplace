@@ -9,12 +9,13 @@
     margin: auto 4px;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     align-items: center;
     letter-spacing: 0.01071em;
-    border-radius: 16px;
+    border-radius: 3px;
     line-height: 1.43;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 600;
     min-width: 32px;
 
     &.dots:hover {
@@ -22,25 +23,25 @@
       cursor: default;
     }
     &:hover {
-      background-color: rgba(0, 0, 0, 0.04);
+      background-color: rgba(0, 0, 0, 0.1);
       cursor: pointer;
     }
 
     &.selected {
-      background-color: rgba(0, 0, 0, 0.08);
+      background-color: rgba(0, 0, 0, 0.1);
     }
 
     .arrow {
       &::before {
         position: relative;
-        /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+        top: 3.5pt;
         content: '';
         /* By using an em scale, the arrows will size with the font */
         display: inline-block;
-        width: 0.4em;
-        height: 0.4em;
-        border-right: 0.12em solid rgba(0, 0, 0, 0.87);
-        border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+        width: 0.9em;
+        height: 0.9em;
+        border-right: 3px solid rgba(0, 0, 0, 0.87);
+        border-top: 3px solid rgba(0, 0, 0, 0.87);
       }
 
       &.left {
@@ -56,8 +57,8 @@
       pointer-events: none;
 
       .arrow::before {
-        border-right: 0.12em solid rgba(0, 0, 0, 0.43);
-        border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+        border-right: 0.4em solid rgba(0, 0, 0, 0.43);
+        border-top: 0.4em solid rgba(0, 0, 0, 0.43);
       }
 
       &:hover {
