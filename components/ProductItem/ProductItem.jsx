@@ -73,7 +73,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className='my-5'>
-      <div className='h-100 max-w-sm rounded overflow-hidden shadow-lg relative'>
+      <div className='h-auto max-w-xs rounded overflow-hidden shadow-lg relative'>
         <div
           className='absolute top-3 right-4 block text-white text-center bg-indigo-600 rounded-md w-auto px-2 py-1 cursor-pointer'
           onClick={handleAddToCart}
@@ -82,7 +82,7 @@ const ProductItem = ({ product }) => {
             <BsCartPlus /> <span>Add</span>
           </div>
         </div>
-        <Link href={`/product/${product.slug}`}>
+        <Link href={`/product/${product.id}`}>
           <Image
             className='w-full rounded'
             src={product.image}
@@ -92,7 +92,7 @@ const ProductItem = ({ product }) => {
           />
         </Link>
         <div className='px-6 py-4'>
-          <Link href={`/product/${product.slug}`}>
+          <Link href={`/product/${product.id}`}>
             <div className='text-base mb-2 font-medium'>
               {product.title} {product.seller_name} {product.device}
             </div>
