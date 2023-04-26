@@ -13,13 +13,24 @@ import { FiShare } from 'react-icons/fi'
 
 const ProductItem = ({ product }) => {
   const [isLiked, setIsLiked] = useState(false)
-  const [isContextMenuOpen, setContextMenuOpen] = useState(false)
+  const [isContextMenuActive, setContextMenuActive] = useState(false)
+  const [isCopied, setIsCopied] = useState(false)
 
   const handleLike = () => {
     setIsLiked(!isLiked)
   }
-  const handleContextMenu = () => {
-    setContextMenuOpen(!isContextMenuOpen)
+  const handleContextMenu = (e) => {
+    e.stopPropagation()
+    setContextMenuActive(!isContextMenuActive)
+  }
+
+  const handleCopyToClipboard = (textToCopy) => {
+    navigator.clipboard.writeText(textToCopy)
+    setIsCopied(true)
+    setTimeout(() => {
+      setIsCopied(false)
+    }, 4000)
+    // setContextMenuActive(false)
   }
   return (
     <div className='my-5'>
@@ -88,10 +99,23 @@ const ProductItem = ({ product }) => {
                 className='w-8 h-8 hover:cursor-pointer'
                 onClick={handleContextMenu}
               />
-              <div className='absolute flex px-1.5 py-0.5 top-0 right-0 bg-white rounded-md border border-gray-700 text-gray-700 hover:cursor-pointer gap-1'>
-                <AiOutlineLink className='w-5 h-5' />
-                <span className='text-sm'>Copy Link</span>
-              </div>
+              {isContextMenuActive && (
+                <div
+                  className='absolute flex px-1.5 py-0.5 -top-4 right-4 bg-white rounded-md border border-gray-700 text-gray-700 hover:cursor-pointer gap-1'
+                  onClick={() =>
+                    handleCopyToClipboard(`/product/${product.id}`)
+                  }
+                >
+                  <AiOutlineLink className='w-5 h-5' />
+                  <span className='text-sm'>Copy Link</span>
+                </div>
+              )}
+              {isCopied && (
+                <div className='absolute flex px-1.5 py-0.5 -top-10 right-4 bg-gray-700 rounded-md border border-gray-700 text-white hover:cursor-pointer gap-1'>
+                  {/* <AiOutlineLink className='w-5 h-5' /> */}
+                  <span className='text-xs'>Copied!</span>
+                </div>
+              )}
             </div>
           ) : (
             <p className='text-sm'>
