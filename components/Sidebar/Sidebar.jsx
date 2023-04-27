@@ -6,17 +6,15 @@ import items from '@/utils/sidebar.json'
 const Sidebar = ({ contentTypes, handleChangeChecked }) => {
   return (
     <div className='sidebar p-4 h-full'>
-      {items.map((item, index) => (
-        <SidebarItem key={index} item={item} />
-      ))}
-
-      {/* <h1 className='text-2xl font-bold'>SIDEBAR</h1> */}
       {/* Category filter */}
-      {/* <div className='my-3'>
-        <p className='font-medium text-xl'>Categories</p>
-      </div> */}
+      <div className='my-3'>
+        <p className='font-medium text-xl my-3'>Categories</p>
+        {items.map((item, index) => (
+          <SidebarItem key={index} item={item} />
+        ))}
+      </div>
       {/* Contents filter */}
-      {/* <div className='my-3'>
+      <div className='my-3'>
         <p className='font-medium text-xl'>Contents</p>
         {contentTypes?.map((contentType) => (
           <Checkbox
@@ -25,7 +23,7 @@ const Sidebar = ({ contentTypes, handleChangeChecked }) => {
             handleChangeChecked={handleChangeChecked}
           />
         ))}
-      </div> */}
+      </div>
       {/* price filter */}
       <div></div>
       {/* polygon filter */}

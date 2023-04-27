@@ -114,7 +114,7 @@ const ProductScreen = () => {
               <h4 className='font-medium text-lg'>Seller: </h4>
               <Image
                 className='w-auto h-auto rounded-full object-cover'
-                src={product.seller_image}
+                src={seller_image}
                 alt='Seller Image'
                 width={30}
                 height={30}
