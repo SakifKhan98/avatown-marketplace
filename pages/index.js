@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Sidebar from '@/components/Sidebar/Sidebar'
 
 let PageSize = 12
-
+// Toys,Animal,Electronics,Home,Beauty,Books,Sports,Music,Fashion,Food
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1)
   const [productList, setProductList] = useState(data.products)
@@ -46,6 +46,20 @@ export default function Home() {
     },
     { id: 'other', checked: false, name: 'Other', title: 'Other' }
   ])
+  // const [autoUploadTypes, setAutoUploadType] = useState([
+  //   {
+  //     id: 'True',
+  //     checked: false,
+  //     name: true,
+  //     title: 'Supported'
+  //   },
+  //   {
+  //     id: 'False',
+  //     checked: false,
+  //     name: false,
+  //     title: 'Unsupported'
+  //   }
+  // ])
 
   const handleChangeChecked = (id) => {
     const contentTypeList = contentTypes
@@ -54,18 +68,6 @@ export default function Home() {
     )
     setContentTypes(changeContentTypeList)
   }
-  // Microsoft HoloLens,Oculus Rift,HTC Vive,PlayStation VR,Samsung Gear VR,Google Daydream View,Other
-
-  // const applyFilters = () => {
-  //   const filteredData = data.products.filter((product) => {
-  //     return contentTypes.find((contentType) => {
-  //       if (contentType.checked) {
-  //         return contentType.name === product.contentType
-  //       }
-  //     })
-  //   })
-  //   return filteredData
-  // }
 
   const applyFilters = () => {
     let updatedProductList = data.products
@@ -84,7 +86,7 @@ export default function Home() {
     //   )
     // }
 
-    // Cuisine Filter
+    // Content Type Filter
     const cuisinesChecked = contentTypes
       .filter((item) => item.checked)
       .map((item) => item.title)

@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Checkbox from '../Checkbox/Checkbox'
+import { TbTriangleInvertedFilled, TbTriangleFilled } from 'react-icons/tb'
 
 const Sidebar = ({ contentTypes, handleChangeChecked }) => {
   return (
-    <>
-      <h1>SIDEBAR</h1>
+    <div className='p-4'>
+      <h1 className='text-2xl font-bold'>SIDEBAR</h1>
       {/* Category filter */}
-      <div></div>
+      <div className='my-3'>
+        <p className='font-medium text-xl'>Categories</p>
+      </div>
       {/* Contents filter */}
-      <div>
-        <p>Contents</p>
-        {contentTypes.map((contentType) => (
+      <div className='my-3'>
+        <p className='font-medium text-xl'>Contents</p>
+        {contentTypes?.map((contentType) => (
           <Checkbox
             key={contentType.id}
             option={contentType}
@@ -23,10 +26,19 @@ const Sidebar = ({ contentTypes, handleChangeChecked }) => {
       {/* polygon filter */}
       <div></div>
       {/* Auto-Upload filter */}
-      <div>
-        <p>Auto Upload Support</p>
-      </div>
-    </>
+      {/* <div className='my-3'>
+        <p className='font-medium text-xl'>Auto Upload Support</p>
+        {autoUploadTypes.map((autoUploadType) => (
+          <Checkbox
+            key={autoUploadType.id}
+            option={autoUploadType}
+            handleChangeChecked={() => {
+              console.log('Selected Support Type')
+            }}
+          />
+        ))}
+      </div> */}
+    </div>
   )
 }
 

@@ -3,8 +3,9 @@ import React from 'react'
 const Checkbox = ({ option, handleChangeChecked }) => {
   const { id, checked, name, title } = option
   return (
-    <div>
+    <div className='pt-1 px-1'>
       <input
+        className='mx-2'
         id={id}
         type='checkbox'
         name={name}
