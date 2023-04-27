@@ -1,5 +1,6 @@
+import Link from 'next/link'
 import { useState } from 'react'
-import { AiOutlineArrowDown } from 'react-icons/ai'
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 
 export default function SidebarItem({ item }) {
   const [open, setOpen] = useState(false)
@@ -8,15 +9,12 @@ export default function SidebarItem({ item }) {
     return (
       <div className={open ? 'sidebar-item open' : 'sidebar-item'}>
         <div className='sidebar-title cursor-pointer'>
-          <span>
-            {item.icon && <i className={item.icon}></i>}
-            {item.title}
-          </span>
-          {/* <i
-            className='bi-chevron-down toggle-btn'
-            onClick={() => setOpen(!open)}
-          ></i> */}
-          <AiOutlineArrowDown onClick={() => setOpen(!open)} />
+          <span>{item.title}</span>
+          {open ? (
+            <AiOutlineArrowUp onClick={() => setOpen(!open)} />
+          ) : (
+            <AiOutlineArrowDown onClick={() => setOpen(!open)} />
+          )}
         </div>
         <div className='sidebar-content'>
           {item.childrens.map((child, index) => (
@@ -27,10 +25,9 @@ export default function SidebarItem({ item }) {
     )
   } else {
     return (
-      <a href={item.path || '#'} className='sidebar-item plain'>
-        {item.icon && <i className={item.icon}></i>}
+      <Link href={`products${item.path}` || '#'} className='sidebar-item plain'>
         {item.title}
-      </a>
+      </Link>
     )
   }
 }
