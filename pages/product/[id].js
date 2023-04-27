@@ -5,15 +5,12 @@ import {
   AiFillStar,
   AiOutlineStar
 } from 'react-icons/ai'
-
-// import { client, urlFor } from '../../lib/client'
-// import { Product } from '../../components'
-// import { useStateContext } from '../../context/StateContext';
 import data from '@/utils/data'
 import Image from 'next/image'
 import ProductItem from '@/components/ProductItem/ProductItem'
 import { useRouter } from 'next/router'
 import Layout from '@/components/Layout/Layout'
+import Link from 'next/link'
 
 const ProductScreen = () => {
   const [qty, setQty] = useState(1)
@@ -67,8 +64,8 @@ const ProductScreen = () => {
           <div>
             <div>
               <Image
-                className='border rounded-xl bg-gray-300 cursor-pointer ease-in-out duration-300 hover:bg-red-500'
-                src={product.image}
+                className='border rounded-xl bg-gray-300 cursor-pointer ease-in-out duration-300 hover:bg-red-500 w-full h-full'
+                src={image}
                 alt='product image'
                 width={450}
                 height={450}
@@ -105,9 +102,24 @@ const ProductScreen = () => {
               </div>
               <p className=''>({rating})</p>
             </div>
-            <div className='w-auto my-5 mr-5'>
+            <div className='my-5 mr-5'>
               <h4 className='font-medium text-lg'>Details: </h4>
               <p>{description}</p>
+            </div>
+            <div className='flex gap-2 items-center my-5 mr-5'>
+              <h4 className='font-medium text-lg'>Category: </h4>
+              <p>{category}</p>
+            </div>
+            <div className='flex gap-2 items-center my-5 mr-5'>
+              <h4 className='font-medium text-lg'>Seller: </h4>
+              <Image
+                className='w-auto h-auto rounded-full object-cover'
+                src={product.seller_image}
+                alt='Seller Image'
+                width={30}
+                height={30}
+              />
+              <p>{seller_name}</p>
             </div>
             <p className='font-bold mt-4 text-2xl text-violet-700'>
               Price: ${price}
@@ -143,16 +155,18 @@ const ProductScreen = () => {
                 className='py-2 px-5 border border-violet-500 hover:border hover:border-violet-500 hover:bg-white hover:text-slate-700 mt-8 text-xl font-base cursor-pointer bg-violet-500 text-white hover:scale-200 transition ease-in-out duration-500'
                 onClick={() => console.log('Added to Cart')}
               >
-                Buy Now
+                <Link href='/cart'>Buy Now</Link>
               </button>
             </div>
           </div>
         </div>
 
-        <div className='maylike-products-wrapper h-auto'>
-          <h2>You may also like</h2>
+        <div className='m-20 h-auto'>
+          <h2 className='text-center font-bold text-4xl text-violet-500'>
+            You may also like
+          </h2>
           <div className='marquee'>
-            <div className='maylike-products-container track'>
+            <div className='flex justify-center gap-5 mt-5 track'>
               {data.products.map((item) => (
                 <ProductItem key={item.id} product={item} />
               ))}
