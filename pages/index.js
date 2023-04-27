@@ -46,20 +46,6 @@ export default function Home() {
     },
     { id: 'other', checked: false, name: 'Other', title: 'Other' }
   ])
-  // const [autoUploadTypes, setAutoUploadType] = useState([
-  //   {
-  //     id: 'True',
-  //     checked: false,
-  //     name: true,
-  //     title: 'Supported'
-  //   },
-  //   {
-  //     id: 'False',
-  //     checked: false,
-  //     name: false,
-  //     title: 'Unsupported'
-  //   }
-  // ])
 
   const handleChangeChecked = (id) => {
     const contentTypeList = contentTypes

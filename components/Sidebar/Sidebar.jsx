@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Checkbox from '../Checkbox/Checkbox'
-import { TbTriangleInvertedFilled, TbTriangleFilled } from 'react-icons/tb'
+import SidebarItem from './SidebarItem'
+import items from '@/utils/sidebar.json'
 
 const Sidebar = ({ contentTypes, handleChangeChecked }) => {
   return (
-    <div className='p-4'>
-      <h1 className='text-2xl font-bold'>SIDEBAR</h1>
+    <div className='sidebar p-4 h-full'>
+      {items.map((item, index) => (
+        <SidebarItem key={index} item={item} />
+      ))}
+
+      {/* <h1 className='text-2xl font-bold'>SIDEBAR</h1> */}
       {/* Category filter */}
-      <div className='my-3'>
+      {/* <div className='my-3'>
         <p className='font-medium text-xl'>Categories</p>
-      </div>
+      </div> */}
       {/* Contents filter */}
-      <div className='my-3'>
+      {/* <div className='my-3'>
         <p className='font-medium text-xl'>Contents</p>
         {contentTypes?.map((contentType) => (
           <Checkbox
@@ -20,7 +25,7 @@ const Sidebar = ({ contentTypes, handleChangeChecked }) => {
             handleChangeChecked={handleChangeChecked}
           />
         ))}
-      </div>
+      </div> */}
       {/* price filter */}
       <div></div>
       {/* polygon filter */}
