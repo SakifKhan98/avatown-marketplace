@@ -1,4 +1,119 @@
 const data = {
+  contentData : [
+    {
+      id: 'microsoft_hololens',
+      checked: false,
+      name: 'Microsoft HoloLens',
+      title: 'Microsoft HoloLens'
+    },
+    {
+      id: 'oculus_rift',
+      checked: false,
+      name: 'Oculus Rift',
+      title: 'Oculus Rift'
+    },
+    { id: 'htc_vive', checked: false, name: 'HTC Vive', title: 'HTC Vive' },
+    {
+      id: 'ps_vr',
+      checked: false,
+      name: 'PlayStation VR',
+      title: 'PlayStation VR'
+    },
+    {
+      id: 'samsung_vr',
+      checked: false,
+      name: 'Samsung Gear VR',
+      title: 'Samsung Gear VR'
+    },
+    {
+      id: 'google_daydream',
+      checked: false,
+      name: 'Google Daydream View',
+      title: 'Google Daydream View'
+    },
+    { id: 'other', checked: false, name: 'Other', title: 'Other' }
+  ],
+  categoryData: [
+    {
+      "title": "All Items",
+      "id": "all_items",
+      "childrens": [
+        {
+          "title": "Full Avatars",
+          "id": "full_avatars",
+          "childrens": [
+            {
+              "title": "Toys",
+              "id": "toys",
+              "path": "/toys"
+            },
+            {
+              "title": "Animal",
+              "id": "animal",
+              "path": "/animal"
+            },
+            {
+              "title": "Home Decor",
+              "id": "Home Decor",
+              "path": "/home_decor"
+            },
+            {
+              "title": "Beauty",
+              "id": "beauty",
+              "path": "/beauty"
+            },
+            {
+              "title": "Superhero",
+              "id": "superhero",
+              "path": "/superhero"
+            }
+          ]
+        },
+        {
+          "title": "Half Avatars",
+          "id": "half_avatars",
+          "childrens": [
+            {
+              "title": "Books",
+              "id": "books",
+              "path": "/books"
+            },
+            {
+              "title": "Sports",
+              "id": "sports",
+              "path": "/sports"
+            },
+            {
+              "title": "Technology",
+              "id": "technology",
+              "path": "/technology"
+            },
+            {
+              "title": "Electronics",
+              "id": "electronics",
+              "path": "/electronics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Others",
+      "id": "others",
+      "childrens": [
+        {
+          "title": "Fashion",
+          "id": "fashion",
+          "path": "/fashion"
+        },
+        {
+          "title": "Food",
+          "id": "food",
+          "path": "/food"
+        }
+      ]
+    }
+  ],
   products: [
     {
       id: 1,

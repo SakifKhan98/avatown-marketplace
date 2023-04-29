@@ -71,7 +71,7 @@
 }
 
 .sidebar-item.plain {
-  color: black;
+  /* color: black; */
   text-decoration: none;
 }
 .sidebar-item.plain:hover {

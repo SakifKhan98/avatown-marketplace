@@ -1,16 +1,27 @@
 import React from 'react'
 import Checkbox from '../Checkbox/Checkbox'
 import SidebarItem from './SidebarItem'
-import items from '@/utils/sidebar.json'
+// import items from '@/utils/sidebar.json'
+// Toys,Animal,Electronics,Home,Beauty,Books,Sports,Music,Fashion,Food
 
-const Sidebar = ({ contentTypes, handleChangeChecked }) => {
+const Sidebar = ({
+  contentTypes,
+  categoryTypes,
+  handleChangeChecked,
+  // handleChangeCategory,
+  handleChangedCategory
+}) => {
   return (
     <div className='sidebar p-4 h-full'>
       {/* Category filter */}
       <div className='my-3'>
         <p className='font-medium text-xl my-3'>Categories</p>
-        {items.map((item, index) => (
-          <SidebarItem key={index} item={item} />
+        {categoryTypes.map((categoryType) => (
+          <SidebarItem
+            key={categoryType.id}
+            item={categoryType}
+            handleChangedCategory={handleChangedCategory}
+          />
         ))}
       </div>
       {/* Contents filter */}
