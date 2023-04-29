@@ -86,7 +86,9 @@ export default function Home() {
         <div className='w-10/12 p-10'>
           {resultsFound && (
             <div className='flex flex-row justify-between'>
-              <h1 className='text-2xl font-medium'>All Items</h1>
+              <h1 className='text-2xl font-medium'>
+                All Items {'>'} {selectedCategory}
+              </h1>
               <div>
                 <SelectMenu></SelectMenu>
               </div>

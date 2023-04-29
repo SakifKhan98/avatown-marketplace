@@ -54,7 +54,7 @@ const data = {
             },
             {
               "title": "Home Decor",
-              "id": "Home Decor",
+              "id": "home decor",
               "path": "/home_decor"
             },
             {
