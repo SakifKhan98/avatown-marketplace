@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Checkbox = ({ option, handleChangeChecked }) => {
+  // https://youtu.be/VVhnuOKVHRs
   const { id, checked, name, title } = option
   return (
     <div className='pt-1 px-1'>

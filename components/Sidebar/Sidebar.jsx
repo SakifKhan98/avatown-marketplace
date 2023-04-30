@@ -1,14 +1,11 @@
 import React from 'react'
 import Checkbox from '../Checkbox/Checkbox'
 import SidebarItem from './SidebarItem'
-// import items from '@/utils/sidebar.json'
-// Toys,Animal,Electronics,Home,Beauty,Books,Sports,Music,Fashion,Food
 
 const Sidebar = ({
   contentTypes,
   categoryTypes,
   handleChangeChecked,
-  // handleChangeCategory,
   handleChangedCategory
 }) => {
   return (
