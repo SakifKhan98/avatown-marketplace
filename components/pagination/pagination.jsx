@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePagination, DOTS } from './usePagination'
+import { usePagination, DOTS } from '../../utils/usePagination'
 
 // https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 
