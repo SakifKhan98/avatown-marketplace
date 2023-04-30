@@ -1,0 +1,72 @@
+[
+  {
+    "title": "All Items",
+    "childrens": [
+      {
+        "title": "Full Avatars",
+        "childrens": [
+          {
+            "title": "Toys",
+            "id": "toys",
+            "path": "/toys"
+          },
+          {
+            "title": "Animal",
+            "id": "animals",
+            "path": "/animals"
+          },
+          {
+            "title": "Electronics",
+            "id": "electronics",
+            "path": "/electronics"
+          },
+          {
+            "title": "Home",
+            "id": "home",
+            "path": "/home"
+          },
+          {
+            "title": "Beauty",
+            "id": "beauty",
+            "path": "/beauty"
+          }
+        ]
+      },
+      {
+        "title": "Half Avatars",
+        "childrens": [
+          {
+            "title": "Books",
+            "id": "books",
+            "path": "/books"
+          },
+          {
+            "title": "Sports",
+            "id": "sports",
+            "path": "/sports"
+          },
+          {
+            "title": "Music",
+            "id": "music",
+            "path": "/music"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Others",
+    "childrens": [
+      {
+        "title": "Fashion",
+        "id": "fashion",
+        "path": "/fashion"
+      },
+      {
+        "title": "Food",
+        "id": "food",
+        "path": "/food"
+      }
+    ]
+  }
+]
