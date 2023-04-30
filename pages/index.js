@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout/Layout'
 import ProductItem from '@/components/ProductItem/ProductItem'
 import SelectMenu from '@/components/SelectMenu/SelectMenu'
-import Pagination from '@/components/Pagination/Pagination.jsx'
+import Pagination from '@/components/Pagination/Pagination'
 import data from '@/utils/data'
 import { useEffect, useMemo, useState } from 'react'
 import Sidebar from '@/components/Sidebar/Sidebar'
