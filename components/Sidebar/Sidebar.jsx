@@ -40,18 +40,6 @@ const Sidebar = ({
       {/* polygon filter */}
       <div></div>
       {/* Auto-Upload filter */}
-      {/* <div className='my-3'>
-        <p className='font-medium text-xl'>Auto Upload Support</p>
-        {autoUploadTypes.map((autoUploadType) => (
-          <Checkbox
-            key={autoUploadType.id}
-            option={autoUploadType}
-            handleChangeChecked={() => {
-              console.log('Selected Support Type')
-            }}
-          />
-        ))}
-      </div> */}
     </div>
   )
 }

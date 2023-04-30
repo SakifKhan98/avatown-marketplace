@@ -26,13 +26,7 @@ export default function Home() {
 
   const handleChangedCategory = (e, id) => {
     e.stopPropagation()
-    console.log(id)
-    // const categoryTypeList = categoryTypes
-    // const changeCategoryType = categoryTypeList.map(
-    //   (item) => item.id === id && item
-    // )
     setSelectedCategory(id)
-    console.log('selectedCategory', selectedCategory)
   }
 
   const applyFilters = () => {

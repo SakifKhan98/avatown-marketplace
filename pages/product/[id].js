@@ -25,7 +25,6 @@ const ProductScreen = () => {
     'https://i.ibb.co/HYwFQWH/VRC-image-C-M.png'
   ]
   const { id } = query.query
-  console.log(id)
   const product = data.products.find(
     (singleProduct) => singleProduct.id === parseInt(id)
   )
@@ -51,20 +50,14 @@ const ProductScreen = () => {
     seller_name,
     seller_image
   } = product
-  // const [index, setIndex] = useState(0)
-  // const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
-
-  // const query = useRouter()
-
-  // console.log('SEARCHED PRODUCT', product)
   return (
-    <Layout>
+    <Layout title='Item Page'>
       <div className='m-10 mb-14'>
         <div className='flex flex-row items-center gap-6 m-10'>
           <div>
             <div>
               <Image
-                className='border rounded-xl bg-gray-300 cursor-pointer ease-in-out duration-300 hover:bg-red-500 w-full h-full'
+                className='border rounded-xl bg-gray-300 min-w-[450px] min-h-[450px]'
                 src={image}
                 alt='product image'
                 width={450}
